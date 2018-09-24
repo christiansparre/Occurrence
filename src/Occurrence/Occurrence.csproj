@@ -1,7 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Christian Sparre</Authors>
+    <PackageLicenseUrl>https://github.com/christiansparre/Occurrence/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/christiansparre</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/christiansparre/Occurrence</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>

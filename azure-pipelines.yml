@@ -8,10 +8,11 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  version: $(Date:yyyyMMdd)$(Rev:.rrr)-$(Build.SourceBranchName)
 
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'Run build'
+  displayName: 'Run build $(version)'
 - script: dotnet test ./tests/Occurrence.Tests --configuration $(buildConfiguration) --logger trx
   displayName: 'Run tests'
 
