@@ -8,7 +8,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  version: $(Date:yyyyMMdd)$(Rev:.rrr)-$(Build.SourceBranchName)
+  version: $( Date:yyyyMMdd )$( Rev:.rrr )-$( Build.SourceBranchName )
 
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
