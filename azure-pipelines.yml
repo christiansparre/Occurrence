@@ -7,14 +7,19 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 variables:
+  major: 0
+  minor: 1
+  patch: 0
   buildConfiguration: 'Release'
-  version: $( Date:yyyyMMdd )$( Rev:.rrr )-$( Build.SourceBranchName )
+  pre: $(Date:yyyyMMdd)$(Rev:.rrr)-$(Build.SourceBranchName)
 
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'Run build $(version)'
+  displayName: 'Run build'
 - script: dotnet test ./tests/Occurrence.Tests --configuration $(buildConfiguration) --logger trx
   displayName: 'Run tests'
+- script: dotnet pack ./src/Occurrence --configuration $(buildConfiguration) /p:PackageVersion=$(major).$(minor).$(patch)-$(pre)
+  displayName: 'Package'
 
 - task: PublishTestResults@2
   inputs:
