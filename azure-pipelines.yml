@@ -18,8 +18,10 @@ steps:
   displayName: 'Run build'
 - script: dotnet test ./tests/Occurrence.Tests --configuration $(buildConfiguration) --logger trx
   displayName: 'Run tests'
-- script: dotnet pack ./src/Occurrence --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory) /p:PackageVersion=$(major).$(minor).$(patch)-$(pre)
-  displayName: 'Package'
+- script: |
+    dotnet pack ./src/Occurrence --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory) /p:PackageVersion=$(major).$(minor).$(patch)-$(pre)
+    dotnet pack ./src/Occurrence --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory) /p:PackageVersion=$(major).$(minor).$(patch)
+  displayName: 'Create packages'
 
 - task: PublishTestResults@2
   inputs:
