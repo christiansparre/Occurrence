@@ -14,3 +14,8 @@ steps:
   displayName: 'Run build'
 - script: dotnet test ./tests/Occurrence.Tests --configuration $(buildConfiguration) --logger trx
   displayName: 'Run tests'
+
+- task: PublishTestResults@2
+  inputs:
+    testRunner: VSTest
+    testResultsFiles: '**/*.trx'
