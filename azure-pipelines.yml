@@ -11,4 +11,6 @@ variables:
 
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+  displayName: 'Run build'
+- script: dotnet test ./tests/Occurrence.Tests --configuration $(buildConfiguration) --logger trx
+  displayName: 'Run tests'
