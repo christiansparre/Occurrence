@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Xunit.Abstractions;
 
@@ -7,13 +6,10 @@ namespace Occurrence.Tests.Providers.InMemory
 {
     public class InMemorySimplePerformanceTests : SimplePerformanceTests
     {
-        public override Task<DbContextOptions<EventDbContext>> GetOptions()
+        public override void Configure(EventStoreBuilder builder)
         {
-            var options = new DbContextOptionsBuilder<EventDbContext>()
-                .UseInMemoryDatabase(Guid.NewGuid().ToString())
-                .Options;
-
-            return Task.FromResult(options);
+            builder
+                .ConfigureDbContext(o => o.UseInMemoryDatabase(Guid.NewGuid().ToString()));
         }
 
         public InMemorySimplePerformanceTests(ITestOutputHelper @out) : base(@out)

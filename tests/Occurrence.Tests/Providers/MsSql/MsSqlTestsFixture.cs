@@ -5,19 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Xunit;
 
 namespace Occurrence.Tests.Providers.MsSql
 {
-    [CollectionDefinition(nameof(MsSqlTestsCollection))]
-    public class MsSqlTestsCollection : ICollectionFixture<MsSqlTestsFixture> { }
-
-
     public class MsSqlTestsFixture
     {
+        private readonly IConfigurationRoot _config;
+        private readonly DbContextOptions<EventDbContext> _options;
+
         public MsSqlTestsFixture()
         {
-            var config = new ConfigurationBuilder()
+            _config = new ConfigurationBuilder()
                 .AddInMemoryCollection(new[]
                 {
                     new KeyValuePair<string, string>("MsSqlTestOptions:ConnectionString","Server=.;Database=Occurrence_Tests;Trusted_Connection=True;")
@@ -25,25 +23,28 @@ namespace Occurrence.Tests.Providers.MsSql
                 .AddEnvironmentVariables()
                 .Build();
 
-            Options = new DbContextOptionsBuilder<EventDbContext>()
-                .UseSqlServer(config.GetValue<string>("MsSqlTestOptions:ConnectionString"))
+            _options = new DbContextOptionsBuilder<EventDbContext>()
+                .UseSqlServer(_config.GetValue<string>("MsSqlTestOptions:ConnectionString"))
                 .Options;
 
-            using (var db = new EventDbContext(Options))
+            using (var db = new EventDbContext(_options))
             {
                 db.Database.EnsureCreated();
             }
         }
 
-        public DbContextOptions<EventDbContext> Options { get; set; }
-
         public async Task Cleanup(params string[] streams)
         {
-            using (var db = new EventDbContext(Options))
+            using (var db = new EventDbContext(_options))
             {
                 db.Events.RemoveRange(db.Events.Where(s => streams.Contains(s.Stream)));
                 await db.SaveChangesAsync();
             }
+        }
+
+        public void Configure(EventStoreBuilder builder)
+        {
+            builder.ConfigureDbContext(o => o.UseSqlServer(_config.GetValue<string>("MsSqlTestOptions:ConnectionString")));
         }
     }
 }

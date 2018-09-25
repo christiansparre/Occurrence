@@ -1,13 +1,15 @@
-﻿using System.Data.SqlClient;
+﻿using System;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Occurrence.Tests.Events;
 using Xunit;
 
 namespace Occurrence.Tests
 {
     public abstract class EventStoreTestBase : IAsyncLifetime
     {
-        public abstract Task<DbContextOptions<EventDbContext>> GetOptions();
+        public abstract void Configure(EventStoreBuilder builder);
 
         public virtual Task OnDisposeAsync()
         {
@@ -16,7 +18,13 @@ namespace Occurrence.Tests
 
         public async Task InitializeAsync()
         {
-            Options = await GetOptions();
+            var eventStoreBuilder = new EventStoreBuilder();
+
+            Configure(eventStoreBuilder);
+            eventStoreBuilder.MapEventsFromAssemblyOf<TestEvent>();
+
+            var eventStore = eventStoreBuilder.Build(out var options);
+            Options = options;
 
             using (var db = new EventDbContext(Options))
             {
@@ -31,11 +39,11 @@ namespace Occurrence.Tests
                 }
             }
 
-            Subject = new EventStore(Options);
+            Subject = eventStore;
             await OnInitializedAsync();
         }
 
-        public EventStore Subject { get; private set; }
+        public IEventStore Subject { get; private set; }
 
         protected DbContextOptions<EventDbContext> Options { get; private set; }
 

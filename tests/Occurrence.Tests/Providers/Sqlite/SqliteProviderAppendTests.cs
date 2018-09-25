@@ -6,15 +6,11 @@ namespace Occurrence.Tests.Providers.Sqlite
 {
     public class SqliteProviderAppendTests : AppendTests
     {
-        public override async Task<DbContextOptions<EventDbContext>> GetOptions()
+        public override void Configure(EventStoreBuilder builder)
         {
             var sqliteConnection = new SqliteConnection("Data Source=:memory:");
-            await sqliteConnection.OpenAsync();
-            var options = new DbContextOptionsBuilder<EventDbContext>()
-                .UseSqlite(sqliteConnection)
-                .Options;
-
-            return options;
+            sqliteConnection.Open();
+            builder.ConfigureDbContext(c => c.UseSqlite(sqliteConnection));
         }
     }
 }

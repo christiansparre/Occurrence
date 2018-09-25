@@ -14,10 +14,10 @@ namespace Occurrence.Tests.Providers.MsSql
         {
             _fixture = fixture;
         }
-
-        public override Task<DbContextOptions<EventDbContext>> GetOptions()
+        
+        public override void Configure(EventStoreBuilder builder)
         {
-            return Task.FromResult(_fixture.Options);
+            _fixture.Configure(builder);
         }
 
         public override Task OnDisposeAsync()

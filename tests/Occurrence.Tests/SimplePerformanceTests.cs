@@ -11,8 +11,8 @@ namespace Occurrence.Tests
     public abstract class SimplePerformanceTests : EventStoreTestBase
     {
         private readonly ITestOutputHelper _out;
-        protected string WarmupStream { get; private set; } = Guid.NewGuid().ToString();
-        protected string Stream { get; private set; } = Guid.NewGuid().ToString();
+        protected string WarmupStream { get; } = Guid.NewGuid().ToString();
+        protected string Stream { get; } = Guid.NewGuid().ToString();
 
         protected SimplePerformanceTests(ITestOutputHelper @out)
         {
