@@ -21,7 +21,7 @@ steps:
     dotnet test ./tests/Occurrence.Tests --configuration $(buildConfiguration) --logger trx
   displayName: 'Run tests'
 - script: |
-    dotnet pack ./src/Occurrence --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory) /p:PackageVersion=$(major).$(minor).$(patch)-$(pre)
+    dotnet pack ./src/Occurrence --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/pre /p:PackageVersion=$(major).$(minor).$(patch)-$(pre)
     dotnet pack ./src/Occurrence --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory) /p:PackageVersion=$(major).$(minor).$(patch)
   displayName: 'Create packages'
 
