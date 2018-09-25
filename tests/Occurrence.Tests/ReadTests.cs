@@ -11,24 +11,25 @@ namespace Occurrence.Tests
     {
         protected override async Task OnInitializedAsync()
         {
-            await Subject.Append("1", Enumerable.Range(1, 70).Select(s => new EventData(new TestEvent(), DateTime.UtcNow)).ToArray(), 0);
-            await Subject.Append("2", Enumerable.Range(1, 30).Select(s => new EventData(new TestEvent(), DateTime.UtcNow)).ToArray(), 0);
+            Stream = Guid.NewGuid().ToString();
+
+            await Subject.Append(Stream, Enumerable.Range(1, 70).Select(s => new EventData(new TestEvent(), DateTime.UtcNow)).ToArray(), 0);
         }
 
-        [Theory]
-        [InlineData("1", 70)]
-        [InlineData("2", 30)]
-        public async Task Should_Read_Entire_Stream(string stream, int expectedCount)
-        {
-            var events = await Subject.Read(stream);
+        protected string Stream { get; set; }
 
-            events.Length.Should().Be(expectedCount);
+        [Fact]
+        public async Task Should_Read_Entire_Stream()
+        {
+            var events = await Subject.Read(Stream);
+
+            events.Length.Should().Be(70);
         }
 
         [Fact]
         public async Task Should_Order_Events_Ascending()
         {
-            var events = await Subject.Read("1");
+            var events = await Subject.Read(Stream);
 
             for (int i = 0; i < 70; i++)
             {
@@ -43,7 +44,7 @@ namespace Occurrence.Tests
         [InlineData(1, 1)]
         public async Task Should_Read_Partial_Stream(int firstEventNumber, int lastEventNumber)
         {
-            var events = await Subject.Read("1", firstEventNumber, lastEventNumber);
+            var events = await Subject.Read(Stream, firstEventNumber, lastEventNumber);
 
             events[0].EventNumber.Should().Be(firstEventNumber);
             events[events.Length - 1].EventNumber.Should().Be(lastEventNumber);
