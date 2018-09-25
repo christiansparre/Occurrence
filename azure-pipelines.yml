@@ -16,7 +16,7 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'Run build'
-- script |
+- script: |
     docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=yourStrong(!)Password' -p 1444:1433 -d microsoft/mssql-server-linux:2017-latest
     dotnet test ./tests/Occurrence.Tests --configuration $(buildConfiguration) --logger trx
   displayName: 'Run tests'
