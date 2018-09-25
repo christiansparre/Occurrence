@@ -9,7 +9,7 @@ namespace Occurrence
     public class EventStoreBuilder
     {
         private DbContextOptionsBuilder<EventDbContext> _options;
-        private readonly List<EventTypMapping> _eventTypMappings = new List<EventTypMapping>();
+        private readonly List<EventTypeMapping> _eventTypMappings = new List<EventTypeMapping>();
 
         public EventStoreBuilder ConfigureDbContext(Action<DbContextOptionsBuilder<EventDbContext>> configurator)
         {
@@ -25,7 +25,7 @@ namespace Occurrence
 
             foreach (var type in types)
             {
-                _eventTypMappings.Add(new EventTypMapping(type, type.GetCustomAttribute<EventAttribute>().Name));
+                _eventTypMappings.Add(new EventTypeMapping(type, type.GetCustomAttribute<EventAttribute>().Name));
             }
 
             return this;
@@ -50,7 +50,7 @@ namespace Occurrence
                 throw new NotSupportedException($"Multiple instances of event type mapping found for names {string.Join(", ", nameMapping.Select(s => s.Key))}");
             }
             options = _options.Options;
-            return new EventStore(_options.Options, _eventTypMappings);
+            return new EventStore(_options.Options, _eventTypMappings.ToArray());
         }
     }
 }

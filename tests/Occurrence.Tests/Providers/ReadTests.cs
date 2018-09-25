@@ -14,7 +14,7 @@ namespace Occurrence.Tests
         {
             Stream = Guid.NewGuid().ToString();
 
-            await Subject.Append(Stream, Enumerable.Range(1, 70).Select(s => new EventData(new TestEvent(), DateTime.UtcNow, new Dictionary<string, string> { ["Test"] = "Test " + s })).ToArray(), 0);
+            await Subject.Append(Stream, 0, Enumerable.Range(1, 70).Select(s => new EventData(new TestEvent(), DateTime.UtcNow, new Dictionary<string, string> { ["Test"] = "Test " + s })).ToArray());
         }
 
         protected string Stream { get; set; }

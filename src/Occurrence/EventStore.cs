@@ -13,14 +13,14 @@ namespace Occurrence
         private readonly Dictionary<string, Type> _eventNameToEventTypeMap;
         private readonly Dictionary<Type, string> _eventTypeToEventNameMap;
 
-        public EventStore(DbContextOptions options, List<EventTypMapping> eventTypeMappings)
+        public EventStore(DbContextOptions options, EventTypeMapping[] eventTypeMappings)
         {
             _options = options;
             _eventTypeToEventNameMap = eventTypeMappings.ToDictionary(d => d.Type, d => d.Name);
             _eventNameToEventTypeMap = eventTypeMappings.ToDictionary(d => d.Name, d => d.Type);
         }
 
-        public async Task<AppendResult> Append(string stream, EventData[] events, int expectedVersion)
+        public async Task<AppendResult> Append(string stream, int expectedVersion, params EventData[] events)
         {
             var version = expectedVersion;
 

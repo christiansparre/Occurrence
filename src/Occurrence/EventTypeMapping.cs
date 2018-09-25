@@ -2,9 +2,9 @@
 
 namespace Occurrence
 {
-    public class EventTypMapping
+    public class EventTypeMapping
     {
-        public EventTypMapping(Type type, string name)
+        public EventTypeMapping(Type type, string name)
         {
             Type = type;
             Name = name;

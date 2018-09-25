@@ -23,7 +23,7 @@ namespace Occurrence.Tests
         public async Task SingleEventAppends()
         {
             // Warmup
-            await Subject.Append(WarmupStream, new[] { new EventData(new TestEvent(), DateTime.UtcNow) }, 0);
+            await Subject.Append(WarmupStream, 0, new[] { new EventData(new TestEvent(), DateTime.UtcNow) });
 
             var timer = Stopwatch.StartNew();
             var runfor = TimeSpan.FromSeconds(3);
@@ -31,7 +31,7 @@ namespace Occurrence.Tests
             int count = 0;
             while (timer.Elapsed < runfor)
             {
-                await Subject.Append(Stream, new[] { new EventData(new TestEvent(), DateTime.UtcNow) }, count);
+                await Subject.Append(Stream, count, new[] { new EventData(new TestEvent(), DateTime.UtcNow) });
                 count++;
             }
             timer.Stop();
@@ -47,7 +47,7 @@ namespace Occurrence.Tests
         public async Task EventBatchesAppends(int batchCount)
         {
             // Warmup
-            await Subject.Append(WarmupStream, new[] { new EventData(new TestEvent(), DateTime.UtcNow) }, 0);
+            await Subject.Append(WarmupStream, 0, new[] { new EventData(new TestEvent(), DateTime.UtcNow) });
 
             var timer = Stopwatch.StartNew();
             var runfor = TimeSpan.FromSeconds(3);
@@ -57,7 +57,7 @@ namespace Occurrence.Tests
             {
                 var eventDatas = Enumerable.Range(1, batchCount).Select(s => new EventData(new TestEvent(), DateTime.UtcNow)).ToArray();
 
-                await Subject.Append(Stream, eventDatas, count);
+                await Subject.Append(Stream, count, eventDatas);
                 count = count + batchCount;
             }
             timer.Stop();
