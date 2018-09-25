@@ -1,16 +1,15 @@
 ﻿using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Occurrence.Tests.Providers.MsSql
+namespace Occurrence.Tests.Providers.SqlServer
 {
-    [Collection(nameof(MsSqlTestsCollection))]
-    public class MsSqlProviderSimplePerformanceTests : SimplePerformanceTests
+    [Collection(nameof(SqlServerTestsCollection))]
+    public class SqlServerProviderSimplePerformanceTests : SimplePerformanceTests
     {
-        private readonly MsSqlTestsFixture _fixture;
+        private readonly SqlServerTestsFixture _fixture;
 
-        public MsSqlProviderSimplePerformanceTests(MsSqlTestsFixture fixture, ITestOutputHelper @out) : base(@out)
+        public SqlServerProviderSimplePerformanceTests(SqlServerTestsFixture fixture, ITestOutputHelper @out) : base(@out)
         {
             _fixture = fixture;
         }

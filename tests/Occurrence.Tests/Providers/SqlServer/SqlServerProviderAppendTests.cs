@@ -1,15 +1,14 @@
 ﻿using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 using Xunit;
 
-namespace Occurrence.Tests.Providers.MsSql
+namespace Occurrence.Tests.Providers.SqlServer
 {
-    [Collection(nameof(MsSqlTestsCollection))]
-    public class MsSqlProviderReadTests : ReadTests
+    [Collection(nameof(SqlServerTestsCollection))]
+    public class SqlServerProviderAppendTests : AppendTests
     {
-        private readonly MsSqlTestsFixture _fixture;
+        private readonly SqlServerTestsFixture _fixture;
 
-        public MsSqlProviderReadTests(MsSqlTestsFixture fixture)
+        public SqlServerProviderAppendTests(SqlServerTestsFixture fixture)
         {
             _fixture = fixture;
         }

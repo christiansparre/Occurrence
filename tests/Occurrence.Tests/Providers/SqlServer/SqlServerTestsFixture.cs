@@ -1,30 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace Occurrence.Tests.Providers.MsSql
+namespace Occurrence.Tests.Providers.SqlServer
 {
-    public class MsSqlTestsFixture
+    public class SqlServerTestsFixture
     {
         private readonly IConfigurationRoot _config;
         private readonly DbContextOptions<EventDbContext> _options;
 
-        public MsSqlTestsFixture()
+        public SqlServerTestsFixture()
         {
             _config = new ConfigurationBuilder()
                 .AddInMemoryCollection(new[]
                 {
-                    new KeyValuePair<string, string>("MsSqlTestOptions:ConnectionString","Server=.;Database=Occurrence_Tests;Trusted_Connection=True;")
+                    new KeyValuePair<string, string>("SqlServerTestsOptions:ConnectionString","Server=.;Database=Occurrence_Tests;Trusted_Connection=True;")
                 })
                 .AddEnvironmentVariables()
                 .Build();
 
             _options = new DbContextOptionsBuilder<EventDbContext>()
-                .UseSqlServer(_config.GetValue<string>("MsSqlTestOptions:ConnectionString"))
+                .UseSqlServer(_config.GetValue<string>("SqlServerTestsOptions:ConnectionString"))
                 .Options;
 
             using (var db = new EventDbContext(_options))
@@ -44,7 +42,7 @@ namespace Occurrence.Tests.Providers.MsSql
 
         public void Configure(EventStoreBuilder builder)
         {
-            builder.ConfigureDbContext(o => o.UseSqlServer(_config.GetValue<string>("MsSqlTestOptions:ConnectionString")));
+            builder.ConfigureDbContext(o => o.UseSqlServer(_config.GetValue<string>("SqlServerTestsOptions:ConnectionString")));
         }
     }
 }
