@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FluentAssertions;
@@ -55,6 +56,16 @@ namespace Occurrence.Tests
 
             exception.CurrentVersion.Should().Be(0);
             exception.ExpectedVersion.Should().Be(1);
+        }
+
+        [Fact]
+        public async Task Should_Append_Metadata()
+        {
+            await Subject.Append(Stream, new[] { new EventData(new TestEvent(), DateTime.UtcNow, new Dictionary<string, string> { ["Test"] = "Hello world 42" }) }, 0);
+
+            var eventDatas = await Subject.Read(Stream);
+
+            eventDatas.Single().Metadata.Should().Contain("Test", "Hello world 42");
         }
     }
 }

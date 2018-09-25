@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FluentAssertions;
@@ -13,7 +14,7 @@ namespace Occurrence.Tests
         {
             Stream = Guid.NewGuid().ToString();
 
-            await Subject.Append(Stream, Enumerable.Range(1, 70).Select(s => new EventData(new TestEvent(), DateTime.UtcNow)).ToArray(), 0);
+            await Subject.Append(Stream, Enumerable.Range(1, 70).Select(s => new EventData(new TestEvent(), DateTime.UtcNow, new Dictionary<string, string> { ["Test"] = "Test " + s })).ToArray(), 0);
         }
 
         protected string Stream { get; set; }
@@ -50,5 +51,14 @@ namespace Occurrence.Tests
             events[events.Length - 1].EventNumber.Should().Be(lastEventNumber);
             events.Length.Should().Be(lastEventNumber - firstEventNumber + 1);
         }
+
+        [Fact]
+        public async Task Should_Read_Metadata()
+        {
+            var persistedEventDatas = await Subject.Read(Stream, 11, 11);
+
+            persistedEventDatas.First().Metadata.Should().Contain("Test", "Test 11");
+        }
+
     }
 }
