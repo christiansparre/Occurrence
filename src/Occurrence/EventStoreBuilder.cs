@@ -21,7 +21,7 @@ namespace Occurrence
 
         public EventStoreBuilder MapEventsFromAssemblyOf<TEvent>()
         {
-            var types = typeof(TEvent).Assembly.GetExportedTypes().Where(t => CustomAttributeExtensions.GetCustomAttribute<EventAttribute>((MemberInfo) t) != null);
+            var types = typeof(TEvent).Assembly.GetExportedTypes().Where(t => t.GetCustomAttribute<EventAttribute>() != null);
 
             foreach (var type in types)
             {
