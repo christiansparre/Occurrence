@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Data.SqlClient;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Xunit;
 
@@ -19,7 +20,15 @@ namespace Occurrence.Tests
 
             using (var db = new EventDbContext(Options))
             {
-                await db.Database.EnsureCreatedAsync();
+                try
+                {
+                    await db.Database.EnsureCreatedAsync();
+                }
+                catch (SqlException e) when (e.Number == 1801)
+                {
+                    // Catch race condition when running tests and the database does not exist
+                    // causes the EnsureCreatedAsync to fail
+                }
             }
 
             Subject = new EventStore(Options);

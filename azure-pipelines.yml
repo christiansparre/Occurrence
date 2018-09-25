@@ -16,7 +16,9 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'Run build'
-- script: dotnet test ./tests/Occurrence.Tests --configuration $(buildConfiguration) --logger trx
+- script |
+    docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=yourStrong(!)Password' -p 1444:1433 -d microsoft/mssql-server-linux:2017-latest
+    dotnet test ./tests/Occurrence.Tests --configuration $(buildConfiguration) --logger trx
   displayName: 'Run tests'
 - script: |
     dotnet pack ./src/Occurrence --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory) /p:PackageVersion=$(major).$(minor).$(patch)-$(pre)

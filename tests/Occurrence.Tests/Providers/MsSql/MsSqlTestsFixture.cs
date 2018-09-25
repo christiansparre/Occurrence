@@ -5,27 +5,34 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Xunit;
 
 namespace Occurrence.Tests.Providers.MsSql
 {
+    [CollectionDefinition(nameof(MsSqlTestsCollection))]
+    public class MsSqlTestsCollection : ICollectionFixture<MsSqlTestsFixture> { }
+
+
     public class MsSqlTestsFixture
     {
-        private IConfiguration _config;
-
         public MsSqlTestsFixture()
         {
-            _config = new ConfigurationBuilder()
+            var config = new ConfigurationBuilder()
                 .AddInMemoryCollection(new[]
                 {
-                    new KeyValuePair<string, string>("MsSqlTestOptions:ConnectionString","Server=.;Database=Occurrence_Tests;Trusted_Connection=True;"),
-                    new KeyValuePair<string, string>("MsSqlTestOptions:DropDatabase","False")
+                    new KeyValuePair<string, string>("MsSqlTestOptions:ConnectionString","Server=.;Database=Occurrence_Tests;Trusted_Connection=True;")
                 })
                 .AddEnvironmentVariables()
                 .Build();
 
             Options = new DbContextOptionsBuilder<EventDbContext>()
-                .UseSqlServer(_config.GetValue<string>("MsSqlTestOptions:ConnectionString"))
+                .UseSqlServer(config.GetValue<string>("MsSqlTestOptions:ConnectionString"))
                 .Options;
+
+            using (var db = new EventDbContext(Options))
+            {
+                db.Database.EnsureCreated();
+            }
         }
 
         public DbContextOptions<EventDbContext> Options { get; set; }

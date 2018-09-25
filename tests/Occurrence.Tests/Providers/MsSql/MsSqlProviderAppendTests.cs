@@ -5,7 +5,8 @@ using Xunit;
 
 namespace Occurrence.Tests.Providers.MsSql
 {
-    public class MsSqlProviderAppendTests : AppendTests, IClassFixture<MsSqlTestsFixture>
+    [Collection(nameof(MsSqlTestsCollection))]
+    public class MsSqlProviderAppendTests : AppendTests
     {
         private readonly MsSqlTestsFixture _fixture;
 

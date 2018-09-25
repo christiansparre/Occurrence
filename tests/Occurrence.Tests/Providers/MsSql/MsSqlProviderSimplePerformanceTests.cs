@@ -5,7 +5,8 @@ using Xunit.Abstractions;
 
 namespace Occurrence.Tests.Providers.MsSql
 {
-    public class MsSqlProviderSimplePerformanceTests : SimplePerformanceTests, IClassFixture<MsSqlTestsFixture>
+    [Collection(nameof(MsSqlTestsCollection))]
+    public class MsSqlProviderSimplePerformanceTests : SimplePerformanceTests
     {
         private readonly MsSqlTestsFixture _fixture;
 
