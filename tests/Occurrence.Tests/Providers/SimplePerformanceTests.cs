@@ -6,7 +6,7 @@ using Occurrence.Tests.Events;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Occurrence.Tests
+namespace Occurrence.Tests.Providers
 {
     public abstract class SimplePerformanceTests : EventStoreTestBase
     {

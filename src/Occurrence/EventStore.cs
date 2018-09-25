@@ -90,5 +90,17 @@ namespace Occurrence
                 )).ToArray();
             }
         }
+
+        public async Task<int> GetStreamVersion(string stream)
+        {
+            using (var db = new EventDbContext(_options))
+            {
+                return await db.Events
+                    .Where(s => s.Stream == stream)
+                    .OrderByDescending(o => o.EventNumber)
+                    .Select(s => s.EventNumber)
+                    .FirstOrDefaultAsync();
+            }
+        }
     }
 }

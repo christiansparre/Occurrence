@@ -1,11 +1,10 @@
-﻿using System;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Occurrence.Tests.Events;
 using Xunit;
 
-namespace Occurrence.Tests
+namespace Occurrence.Tests.Providers
 {
     public abstract class EventStoreTestBase : IAsyncLifetime
     {

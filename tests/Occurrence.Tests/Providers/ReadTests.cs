@@ -6,7 +6,7 @@ using FluentAssertions;
 using Occurrence.Tests.Events;
 using Xunit;
 
-namespace Occurrence.Tests
+namespace Occurrence.Tests.Providers
 {
     public abstract class ReadTests : EventStoreTestBase
     {
@@ -58,6 +58,14 @@ namespace Occurrence.Tests
             var persistedEventDatas = await Subject.Read(Stream, 11, 11);
 
             persistedEventDatas.First().Metadata.Should().Contain("Test", "Test 11");
+        }
+
+        [Fact]
+        public async Task Should_GetStreamVersion()
+        {
+            var version = await Subject.GetStreamVersion(Stream);
+
+            version.Should().Be(70);
         }
 
     }

@@ -6,7 +6,7 @@ using FluentAssertions;
 using Occurrence.Tests.Events;
 using Xunit;
 
-namespace Occurrence.Tests
+namespace Occurrence.Tests.Providers
 {
     public abstract class AppendTests : EventStoreTestBase
     {
