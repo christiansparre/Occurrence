@@ -67,5 +67,35 @@ namespace Occurrence.Tests.Providers
 
             eventDatas.Single().Metadata.Should().Contain("Test", "Hello world 42");
         }
+
+        [Fact]
+        public async Task Should_Include_Correct_Timestamp()
+        {
+            var timestamp = DateTime.UtcNow;
+
+            await Subject.Append(Stream, 0, new EventData(new TestEvent(), timestamp));
+
+            var events = await Subject.Read(Stream);
+
+            events.Single().Timestamp.Should().Be(timestamp);
+        }
+
+        [Fact]
+        public async Task Should_Include_Correct_EventType()
+        {
+            await Subject.Append(Stream, 0, new EventData(new TestEvent(), DateTime.UtcNow));
+
+            var events = await Subject.Read(Stream);
+
+            events.Single().EventType.Should().Be("TestEvent");
+        }
+
+        [Fact]
+        public async Task Should_Throw_EventTypeNotMappedException_If_Type_Is_Not_Mapped()
+        {
+            var exception = await Assert.ThrowsAsync<EventTypeNotMappedException>(() => Subject.Append(Stream, 0, new EventData(new NotMappedTestEvent(), DateTime.UtcNow)));
+
+            exception.Type.Should().Be(typeof(NotMappedTestEvent));
+        }
     }
 }

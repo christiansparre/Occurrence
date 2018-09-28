@@ -4,10 +4,7 @@ namespace Occurrence
 {
     public class EventDbContext : DbContext
     {
-        public EventDbContext(DbContextOptions options) : base(options)
-        {
-
-        }
+        public EventDbContext(DbContextOptions options) : base(options) { }
 
         public DbSet<SerializedEventEntity> Events { get; set; }
 

@@ -5,4 +5,9 @@ namespace Occurrence.Tests.Events
     {
         public string Test { get; set; }
     }
+
+    public class NotMappedTestEvent
+    {
+        public string Test { get; set; }
+    }
 }

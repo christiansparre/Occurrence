@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/tests/Occurrence.Tests/Occurrence.Tests.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "test with coverage",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "/p:CollectCoverage=true",
+                "/p:CoverletOutputFormat=lcov",
+                "/p:CoverletOutput=./lcov.info",
+                "${workspaceFolder}/tests/Occurrence.Tests/Occurrence.Tests.csproj"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+    ]
+}

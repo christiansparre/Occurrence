@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FluentAssertions;
+using Microsoft.EntityFrameworkCore;
 using Occurrence.Tests.Events;
 using Xunit;
 
@@ -66,6 +67,22 @@ namespace Occurrence.Tests.Providers
             var version = await Subject.GetStreamVersion(Stream);
 
             version.Should().Be(70);
+        }
+
+        [Fact]
+        public async Task Should_Throw_EventTypeNameNotMappedException_If_Name_Is_Not_Mapped()
+        {
+            using (var db = new EventDbContext(Options))
+            {
+                var e = await db.Events.SingleOrDefaultAsync(s => s.Stream == Stream && s.EventNumber == 1);
+
+                e.EventType = "NotMappedTestEvent";
+                await db.SaveChangesAsync();
+            }
+
+            var exception = await Assert.ThrowsAsync<EventTypeNameNotMappedException>(() => Subject.Read(Stream, 1, 1));
+
+            exception.Name.Should().Be("NotMappedTestEvent");
         }
 
     }

@@ -58,7 +58,7 @@ namespace Occurrence
         {
             if (!_eventTypeToEventNameMap.TryGetValue(@event.GetType(), out var name))
             {
-                throw new NotSupportedException($"Event type {@event.GetType()} is not mapped");
+                throw new EventTypeNotMappedException(@event.GetType());
             }
             return name;
         }
@@ -67,7 +67,7 @@ namespace Occurrence
         {
             if (!_eventNameToEventTypeMap.TryGetValue(name, out var type))
             {
-                throw new NotSupportedException($"Event name {name} is not mapped");
+                throw new EventTypeNameNotMappedException(name);
             }
             return type;
         }
