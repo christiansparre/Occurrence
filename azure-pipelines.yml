@@ -18,7 +18,7 @@ steps:
   displayName: 'Run build'
 - script: |
     docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=yourStrong(!)Password' -p 1444:1433 -d microsoft/mssql-server-linux:2017-latest
-    dotnet test ./tests/Occurrence.Tests --configuration $(buildConfiguration) --logger trx
+    dotnet test ./tests/Occurrence.Tests --configuration $(buildConfiguration) --logger trx /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
   displayName: 'Run tests'
 - script: |
     dotnet pack ./src/Occurrence --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/pre /p:PackageVersion=$(major).$(minor).$(patch)-$(pre)
@@ -30,4 +30,8 @@ steps:
     testRunner: VSTest
     testResultsFiles: '**/*.trx'
 
+- task: PublishCodeCoverageResults@1
+  inputs:
+    codeCoverageTool: 'Cobertura'
+    summaryFileLocation: $(System.DefaultWorkingDirectory)/tests/Occurrence.Tests/coverage.cobertura.xml
 - task: PublishBuildArtifacts@1

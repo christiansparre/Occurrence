@@ -1,0 +1,824 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<coverage line-rate="0,982" branch-rate="0,907" version="1.9" timestamp="1538124168" lines-covered="166" lines-valid="169" branches-covered="49" branches-valid="54">
+  <sources>
+    <source>C:\Git\Private\github\christiansparre\Occurrence\src\Occurrence\</source>
+  </sources>
+  <packages>
+    <package name="Occurrence" line-rate="0,982" branch-rate="0,907" complexity="0">
+      <classes>
+        <class name="Occurrence.AppendResult" filename="AppendResult.cs" line-rate="1" branch-rate="0" complexity="0">
+          <methods>
+            <method name="get_Version" signature="()" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="10" hits="12" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.Int32)" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="5" hits="20211" branch="False" />
+                <line number="6" hits="20210" branch="False" />
+                <line number="7" hits="20213" branch="False" />
+                <line number="8" hits="20212" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="12" branch="False" />
+            <line number="5" hits="20211" branch="False" />
+            <line number="6" hits="20210" branch="False" />
+            <line number="7" hits="20213" branch="False" />
+            <line number="8" hits="20212" branch="False" />
+          </lines>
+        </class>
+        <class name="Occurrence.EventAttribute" filename="EventAttribute.cs" line-rate="1" branch-rate="0" complexity="0">
+          <methods>
+            <method name="get_Name" signature="()" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="7" hits="70" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.String)" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="9" hits="147" branch="False" />
+                <line number="10" hits="148" branch="False" />
+                <line number="11" hits="148" branch="False" />
+                <line number="12" hits="148" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="70" branch="False" />
+            <line number="9" hits="147" branch="False" />
+            <line number="10" hits="148" branch="False" />
+            <line number="11" hits="148" branch="False" />
+            <line number="12" hits="148" branch="False" />
+          </lines>
+        </class>
+        <class name="Occurrence.EventData" filename="EventData.cs" line-rate="1" branch-rate="1" complexity="0">
+          <methods>
+            <method name="get_Event" signature="()" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="16" hits="184735" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Timestamp" signature="()" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="17" hits="92368" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Metadata" signature="()" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="18" hits="92354" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.Object,System.DateTime,System.Collections.Generic.Dictionary`2&lt;System.String,System.String&gt;)" line-rate="1" branch-rate="1">
+              <lines>
+                <line number="8" hits="92388" branch="False" />
+                <line number="9" hits="92391" branch="False" />
+                <line number="10" hits="92393" branch="False" />
+                <line number="11" hits="92390" branch="False" />
+                <line number="12" hits="92394" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="25" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="14" hits="92390" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="16" hits="184735" branch="False" />
+            <line number="17" hits="92368" branch="False" />
+            <line number="18" hits="92354" branch="False" />
+            <line number="8" hits="92388" branch="False" />
+            <line number="9" hits="92391" branch="False" />
+            <line number="10" hits="92393" branch="False" />
+            <line number="11" hits="92390" branch="False" />
+            <line number="12" hits="92394" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="25" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="14" hits="92390" branch="False" />
+          </lines>
+        </class>
+        <class name="Occurrence.EventDbContext" filename="EventDbContext.cs" line-rate="1" branch-rate="0" complexity="0">
+          <methods>
+            <method name="get_Events" signature="()" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="9" hits="60810" branch="False" />
+              </lines>
+            </method>
+            <method name="OnModelCreating" signature="(Microsoft.EntityFrameworkCore.ModelBuilder)" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="12" hits="3" branch="False" />
+                <line number="13" hits="3" branch="False" />
+                <line number="14" hits="3" branch="False" />
+                <line number="15" hits="3" branch="False" />
+                <line number="17" hits="3" branch="False" />
+                <line number="18" hits="3" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(Microsoft.EntityFrameworkCore.DbContextOptions)" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="7" hits="60975" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="60810" branch="False" />
+            <line number="12" hits="3" branch="False" />
+            <line number="13" hits="3" branch="False" />
+            <line number="14" hits="3" branch="False" />
+            <line number="15" hits="3" branch="False" />
+            <line number="17" hits="3" branch="False" />
+            <line number="18" hits="3" branch="False" />
+            <line number="7" hits="60975" branch="False" />
+          </lines>
+        </class>
+        <class name="Occurrence.EventStore" filename="EventStore.cs" line-rate="1" branch-rate="1" complexity="0">
+          <methods>
+            <method name="GetEventTypeName" signature="(System.Object)" line-rate="1" branch-rate="1">
+              <lines>
+                <line number="58" hits="92366" branch="False" />
+                <line number="59" hits="92373" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="25" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="60" hits="3" branch="False" />
+                <line number="61" hits="3" branch="False" />
+                <line number="63" hits="92389" branch="False" />
+                <line number="64" hits="92389" branch="False" />
+              </lines>
+            </method>
+            <method name="GetEventType" signature="(System.String)" line-rate="1" branch-rate="1">
+              <lines>
+                <line number="67" hits="630" branch="False" />
+                <line number="68" hits="630" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="20" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="69" hits="3" branch="False" />
+                <line number="70" hits="3" branch="False" />
+                <line number="72" hits="627" branch="False" />
+                <line number="73" hits="627" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(Microsoft.EntityFrameworkCore.DbContextOptions,Occurrence.EventTypeMapping[])" line-rate="1" branch-rate="1">
+              <lines>
+                <line number="16" hits="69" branch="False" />
+                <line number="17" hits="69" branch="False" />
+                <line number="18" hits="69" branch="False" />
+                <line number="19" hits="206" branch="True" condition-coverage="100% (4/4)">
+                  <conditions>
+                    <condition number="23" type="jump" coverage="100%" />
+                    <condition number="54" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="20" hits="206" branch="True" condition-coverage="100% (4/4)">
+                  <conditions>
+                    <condition number="97" type="jump" coverage="100%" />
+                    <condition number="128" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="21" hits="68" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="58" hits="92366" branch="False" />
+            <line number="59" hits="92373" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="25" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="60" hits="3" branch="False" />
+            <line number="61" hits="3" branch="False" />
+            <line number="63" hits="92389" branch="False" />
+            <line number="64" hits="92389" branch="False" />
+            <line number="67" hits="630" branch="False" />
+            <line number="68" hits="630" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="20" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="69" hits="3" branch="False" />
+            <line number="70" hits="3" branch="False" />
+            <line number="72" hits="627" branch="False" />
+            <line number="73" hits="627" branch="False" />
+            <line number="16" hits="69" branch="False" />
+            <line number="17" hits="69" branch="False" />
+            <line number="18" hits="69" branch="False" />
+            <line number="19" hits="206" branch="True" condition-coverage="100% (4/4)">
+              <conditions>
+                <condition number="23" type="jump" coverage="100%" />
+                <condition number="54" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="20" hits="206" branch="True" condition-coverage="100% (4/4)">
+              <conditions>
+                <condition number="97" type="jump" coverage="100%" />
+                <condition number="128" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="21" hits="68" branch="False" />
+          </lines>
+        </class>
+        <class name="Occurrence.EventStore/&lt;&gt;c__DisplayClass4_0" filename="EventStore.cs" line-rate="1" branch-rate="0" complexity="0">
+          <methods>
+            <method name="&lt;Append&gt;b__0" signature="(Occurrence.EventData)" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="27" hits="112596" branch="False" />
+                <line number="28" hits="112596" branch="False" />
+                <line number="29" hits="112596" branch="False" />
+                <line number="30" hits="112596" branch="False" />
+                <line number="31" hits="112596" branch="False" />
+                <line number="32" hits="112596" branch="False" />
+                <line number="33" hits="112596" branch="False" />
+                <line number="34" hits="112596" branch="False" />
+                <line number="35" hits="112596" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="27" hits="112596" branch="False" />
+            <line number="28" hits="112596" branch="False" />
+            <line number="29" hits="112596" branch="False" />
+            <line number="30" hits="112596" branch="False" />
+            <line number="31" hits="112596" branch="False" />
+            <line number="32" hits="112596" branch="False" />
+            <line number="33" hits="112596" branch="False" />
+            <line number="34" hits="112596" branch="False" />
+            <line number="35" hits="112596" branch="False" />
+          </lines>
+        </class>
+        <class name="Occurrence.EventStore/&lt;Append&gt;d__4" filename="EventStore.cs" line-rate="1" branch-rate="0,833" complexity="0">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="0,833">
+              <lines>
+                <line number="24" hits="20219" branch="False" />
+                <line number="25" hits="20219" branch="False" />
+                <line number="37" hits="20216" branch="True" condition-coverage="75% (3/4)">
+                  <conditions>
+                    <condition number="141" type="switch" coverage="75%" />
+                  </conditions>
+                </line>
+                <line number="38" hits="20180" branch="False" />
+                <line number="39" hits="20194" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="442" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="40" hits="20194" branch="False" />
+                <line number="41" hits="20194" branch="False" />
+                <line number="42" hits="20194" branch="False" />
+                <line number="43" hits="20194" branch="False" />
+                <line number="45" hits="20215" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="558" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="46" hits="3" branch="False" />
+                <line number="47" hits="3" branch="False" />
+                <line number="50" hits="20212" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="615" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="51" hits="20210" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="730" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="52" hits="20213" branch="False" />
+                <line number="54" hits="20211" branch="False" />
+                <line number="55" hits="20211" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="24" hits="20219" branch="False" />
+            <line number="25" hits="20219" branch="False" />
+            <line number="37" hits="20216" branch="True" condition-coverage="75% (3/4)">
+              <conditions>
+                <condition number="141" type="switch" coverage="75%" />
+              </conditions>
+            </line>
+            <line number="38" hits="20180" branch="False" />
+            <line number="39" hits="20194" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="442" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="40" hits="20194" branch="False" />
+            <line number="41" hits="20194" branch="False" />
+            <line number="42" hits="20194" branch="False" />
+            <line number="43" hits="20194" branch="False" />
+            <line number="45" hits="20215" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="558" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="46" hits="3" branch="False" />
+            <line number="47" hits="3" branch="False" />
+            <line number="50" hits="20212" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="615" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="51" hits="20210" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="730" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="52" hits="20213" branch="False" />
+            <line number="54" hits="20211" branch="False" />
+            <line number="55" hits="20211" branch="False" />
+          </lines>
+        </class>
+        <class name="Occurrence.EventStore/&lt;&gt;c__DisplayClass7_0" filename="EventStore.cs" line-rate="1" branch-rate="0" complexity="0">
+          <methods>
+            <method name="&lt;Read&gt;b__2" signature="(Occurrence.SerializedEventEntity)" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="84" hits="666" branch="False" />
+                <line number="85" hits="666" branch="False" />
+                <line number="86" hits="666" branch="False" />
+                <line number="87" hits="666" branch="False" />
+                <line number="88" hits="666" branch="False" />
+                <line number="89" hits="666" branch="False" />
+                <line number="90" hits="666" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="84" hits="666" branch="False" />
+            <line number="85" hits="666" branch="False" />
+            <line number="86" hits="666" branch="False" />
+            <line number="87" hits="666" branch="False" />
+            <line number="88" hits="666" branch="False" />
+            <line number="89" hits="666" branch="False" />
+            <line number="90" hits="666" branch="False" />
+          </lines>
+        </class>
+        <class name="Occurrence.EventStore/&lt;Read&gt;d__7" filename="EventStore.cs" line-rate="1" branch-rate="1" complexity="0">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1">
+              <lines>
+                <line number="76" hits="36" branch="False" />
+                <line number="77" hits="36" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="118" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="78" hits="36" branch="False" />
+                <line number="79" hits="36" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="466" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="80" hits="36" branch="False" />
+                <line number="81" hits="36" branch="False" />
+                <line number="82" hits="36" branch="False" />
+                <line number="92" hits="33" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="76" hits="36" branch="False" />
+            <line number="77" hits="36" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="118" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="78" hits="36" branch="False" />
+            <line number="79" hits="36" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="466" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="80" hits="36" branch="False" />
+            <line number="81" hits="36" branch="False" />
+            <line number="82" hits="36" branch="False" />
+            <line number="92" hits="33" branch="False" />
+          </lines>
+        </class>
+        <class name="Occurrence.EventStore/&lt;GetStreamVersion&gt;d__8" filename="EventStore.cs" line-rate="1" branch-rate="1" complexity="0">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1">
+              <lines>
+                <line number="95" hits="3" branch="False" />
+                <line number="96" hits="3" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="67" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="97" hits="3" branch="False" />
+                <line number="98" hits="3" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="343" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="99" hits="3" branch="False" />
+                <line number="100" hits="3" branch="False" />
+                <line number="101" hits="3" branch="False" />
+                <line number="102" hits="3" branch="False" />
+                <line number="104" hits="3" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="95" hits="3" branch="False" />
+            <line number="96" hits="3" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="67" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="97" hits="3" branch="False" />
+            <line number="98" hits="3" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="343" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="99" hits="3" branch="False" />
+            <line number="100" hits="3" branch="False" />
+            <line number="101" hits="3" branch="False" />
+            <line number="102" hits="3" branch="False" />
+            <line number="104" hits="3" branch="False" />
+          </lines>
+        </class>
+        <class name="Occurrence.EventStoreBuilder" filename="EventStoreBuilder.cs" line-rate="0,9" branch-rate="0,85" complexity="0">
+          <methods>
+            <method name="ConfigureDbContext" signature="(System.Action`1&lt;Microsoft.EntityFrameworkCore.DbContextOptionsBuilder`1&lt;Occurrence.EventDbContext&gt;&gt;)" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="15" hits="69" branch="False" />
+                <line number="16" hits="69" branch="False" />
+                <line number="17" hits="69" branch="False" />
+                <line number="18" hits="68" branch="False" />
+                <line number="19" hits="68" branch="False" />
+                <line number="20" hits="69" branch="False" />
+              </lines>
+            </method>
+            <method name="MapEventsFromAssemblyOf" signature="()" line-rate="1" branch-rate="1">
+              <lines>
+                <line number="23" hits="71" branch="False" />
+                <line number="24" hits="1334" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="27" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="26" hits="351" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="112" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="27" hits="71" branch="False" />
+                <line number="28" hits="71" branch="False" />
+                <line number="29" hits="71" branch="False" />
+                <line number="31" hits="71" branch="False" />
+                <line number="32" hits="71" branch="False" />
+              </lines>
+            </method>
+            <method name="Build" signature="()" line-rate="0,667" branch-rate="0">
+              <lines>
+                <line number="35" hits="1" branch="False" />
+                <line number="36" hits="1" branch="False" />
+                <line number="37" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="Build" signature="(Microsoft.EntityFrameworkCore.DbContextOptions`1&lt;Occurrence.EventDbContext&gt;&amp;)" line-rate="0,833" branch-rate="0,812">
+              <lines>
+                <line number="40" hits="70" branch="False" />
+                <line number="41" hits="210" branch="True" condition-coverage="100% (4/4)">
+                  <conditions>
+                    <condition number="13" type="jump" coverage="100%" />
+                    <condition number="49" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="42" hits="70" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="93" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="43" hits="1" branch="False" />
+                <line number="44" hits="2" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="113" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="47" hits="206" branch="True" condition-coverage="100% (4/4)">
+                  <conditions>
+                    <condition number="171" type="jump" coverage="100%" />
+                    <condition number="207" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="48" hits="69" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="251" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="49" hits="0" branch="False" />
+                <line number="50" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="271" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="52" hits="69" branch="False" />
+                <line number="53" hits="69" branch="False" />
+                <line number="54" hits="68" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="12" hits="70" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="15" hits="69" branch="False" />
+            <line number="16" hits="69" branch="False" />
+            <line number="17" hits="69" branch="False" />
+            <line number="18" hits="68" branch="False" />
+            <line number="19" hits="68" branch="False" />
+            <line number="20" hits="69" branch="False" />
+            <line number="23" hits="71" branch="False" />
+            <line number="24" hits="1334" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="27" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="26" hits="351" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="112" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="27" hits="71" branch="False" />
+            <line number="28" hits="71" branch="False" />
+            <line number="29" hits="71" branch="False" />
+            <line number="31" hits="71" branch="False" />
+            <line number="32" hits="71" branch="False" />
+            <line number="35" hits="1" branch="False" />
+            <line number="36" hits="1" branch="False" />
+            <line number="37" hits="0" branch="False" />
+            <line number="40" hits="70" branch="False" />
+            <line number="41" hits="210" branch="True" condition-coverage="100% (4/4)">
+              <conditions>
+                <condition number="13" type="jump" coverage="100%" />
+                <condition number="49" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="42" hits="70" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="93" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="43" hits="1" branch="False" />
+            <line number="44" hits="2" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="113" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="47" hits="206" branch="True" condition-coverage="100% (4/4)">
+              <conditions>
+                <condition number="171" type="jump" coverage="100%" />
+                <condition number="207" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="48" hits="69" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="251" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="49" hits="0" branch="False" />
+            <line number="50" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="271" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="52" hits="69" branch="False" />
+            <line number="53" hits="69" branch="False" />
+            <line number="54" hits="68" branch="False" />
+            <line number="12" hits="70" branch="False" />
+          </lines>
+        </class>
+        <class name="Occurrence.EventTypeMapping" filename="EventTypeMapping.cs" line-rate="1" branch-rate="0" complexity="0">
+          <methods>
+            <method name="get_Type" signature="()" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="13" hits="207" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Name" signature="()" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="14" hits="207" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.Type,System.String)" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="7" hits="71" branch="False" />
+                <line number="8" hits="71" branch="False" />
+                <line number="9" hits="71" branch="False" />
+                <line number="10" hits="71" branch="False" />
+                <line number="11" hits="71" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="207" branch="False" />
+            <line number="14" hits="207" branch="False" />
+            <line number="7" hits="71" branch="False" />
+            <line number="8" hits="71" branch="False" />
+            <line number="9" hits="71" branch="False" />
+            <line number="10" hits="71" branch="False" />
+            <line number="11" hits="71" branch="False" />
+          </lines>
+        </class>
+        <class name="Occurrence.EventTypeNameNotMappedException" filename="EventTypeNameNotMappedException.cs" line-rate="1" branch-rate="0" complexity="0">
+          <methods>
+            <method name="get_Name" signature="()" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="7" hits="6" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.String)" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="9" hits="3" branch="False" />
+                <line number="10" hits="3" branch="False" />
+                <line number="11" hits="3" branch="False" />
+                <line number="12" hits="3" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="6" branch="False" />
+            <line number="9" hits="3" branch="False" />
+            <line number="10" hits="3" branch="False" />
+            <line number="11" hits="3" branch="False" />
+            <line number="12" hits="3" branch="False" />
+          </lines>
+        </class>
+        <class name="Occurrence.EventTypeNotMappedException" filename="EventTypeNotMappedException.cs" line-rate="1" branch-rate="0" complexity="0">
+          <methods>
+            <method name="get_Type" signature="()" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="7" hits="6" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.Type)" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="9" hits="3" branch="False" />
+                <line number="10" hits="3" branch="False" />
+                <line number="11" hits="3" branch="False" />
+                <line number="12" hits="3" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="6" branch="False" />
+            <line number="9" hits="3" branch="False" />
+            <line number="10" hits="3" branch="False" />
+            <line number="11" hits="3" branch="False" />
+            <line number="12" hits="3" branch="False" />
+          </lines>
+        </class>
+        <class name="Occurrence.OptimisticConcurrencyException" filename="OptimisticConcurrencyException.cs" line-rate="1" branch-rate="0" complexity="0">
+          <methods>
+            <method name="get_ExpectedVersion" signature="()" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="7" hits="3" branch="False" />
+              </lines>
+            </method>
+            <method name="get_CurrentVersion" signature="()" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="8" hits="3" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.Int32,System.Int32)" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="10" hits="3" branch="False" />
+                <line number="11" hits="3" branch="False" />
+                <line number="12" hits="3" branch="False" />
+                <line number="13" hits="3" branch="False" />
+                <line number="14" hits="3" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="3" branch="False" />
+            <line number="8" hits="3" branch="False" />
+            <line number="10" hits="3" branch="False" />
+            <line number="11" hits="3" branch="False" />
+            <line number="12" hits="3" branch="False" />
+            <line number="13" hits="3" branch="False" />
+            <line number="14" hits="3" branch="False" />
+          </lines>
+        </class>
+        <class name="Occurrence.PersistedEventData" filename="PersistedEventData.cs" line-rate="1" branch-rate="0" complexity="0">
+          <methods>
+            <method name="get_EventNumber" signature="()" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="17" hits="234" branch="False" />
+              </lines>
+            </method>
+            <method name="get_EventType" signature="()" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="18" hits="3" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Timestamp" signature="()" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="19" hits="3" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Event" signature="()" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="20" hits="6" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Metadata" signature="()" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="21" hits="6" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.Int32,System.String,System.DateTime,System.Object,System.Collections.Generic.Dictionary`2&lt;System.String,System.String&gt;)" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="8" hits="627" branch="False" />
+                <line number="9" hits="627" branch="False" />
+                <line number="10" hits="627" branch="False" />
+                <line number="11" hits="627" branch="False" />
+                <line number="12" hits="627" branch="False" />
+                <line number="13" hits="627" branch="False" />
+                <line number="14" hits="627" branch="False" />
+                <line number="15" hits="627" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="17" hits="234" branch="False" />
+            <line number="18" hits="3" branch="False" />
+            <line number="19" hits="3" branch="False" />
+            <line number="20" hits="6" branch="False" />
+            <line number="21" hits="6" branch="False" />
+            <line number="8" hits="627" branch="False" />
+            <line number="9" hits="627" branch="False" />
+            <line number="10" hits="627" branch="False" />
+            <line number="11" hits="627" branch="False" />
+            <line number="12" hits="627" branch="False" />
+            <line number="13" hits="627" branch="False" />
+            <line number="14" hits="627" branch="False" />
+            <line number="15" hits="627" branch="False" />
+          </lines>
+        </class>
+        <class name="Occurrence.SerializedEventEntity" filename="SerializedEventEntity.cs" line-rate="1" branch-rate="0" complexity="0">
+          <methods>
+            <method name="get_Id" signature="()" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="5" hits="1705873" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Stream" signature="()" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="6" hits="496209" branch="False" />
+              </lines>
+            </method>
+            <method name="get_EventNumber" signature="()" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="7" hits="497492" branch="False" />
+              </lines>
+            </method>
+            <method name="get_EventType" signature="()" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="8" hits="496863" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Timestamp" signature="()" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="9" hits="496151" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Event" signature="()" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="10" hits="496153" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Metadata" signature="()" line-rate="1" branch-rate="0">
+              <lines>
+                <line number="11" hits="496195" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="5" hits="1705873" branch="False" />
+            <line number="6" hits="496209" branch="False" />
+            <line number="7" hits="497492" branch="False" />
+            <line number="8" hits="496863" branch="False" />
+            <line number="9" hits="496151" branch="False" />
+            <line number="10" hits="496153" branch="False" />
+            <line number="11" hits="496195" branch="False" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>
