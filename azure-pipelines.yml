@@ -9,7 +9,7 @@ pool:
 variables:
   major: 0
   minor: 1
-  patch: 2
+  patch: 3
   buildConfiguration: 'Release'
   pre: $(Build.BuildNumber)-$(Build.SourceBranchName)
 
@@ -22,7 +22,7 @@ steps:
   displayName: 'Run tests and collect coverage'
 
 - script:
-    dotnet reportgenerator "-reports:coverage.cobertura.xml" "-targetdir:reports"
+    dotnet reportgenerator "-reports:coverage.cobertura.xml" "-targetdir:reports" "-reporttypes:HTMLInline"
   workingDirectory: $(System.DefaultWorkingDirectory)/tests/Occurrence.Tests
   displayName: Generate coverage report
 

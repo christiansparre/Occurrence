@@ -30,4 +30,12 @@
     <ProjectReference Include="..\..\src\Occurrence\Occurrence.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="reports\**" />
+    <EmbeddedResource Remove="reports\**" />
+    <None Remove="reports\**" />
+    <None Remove="coverage.cobertura.xml" />
+    <None Remove="lcov.info" />
+  </ItemGroup>
+
 </Project>
